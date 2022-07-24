@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +22,16 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+
+// ================= Admin Routes ======================
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::get('logout',[AdminController::class,'logout'])->name('admin.logout');
+
+});
+
+
 
 require __DIR__.'/auth.php';
