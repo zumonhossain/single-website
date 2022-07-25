@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Website\WebsiteController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\HomeSliderController;
 
 
 /*
@@ -36,10 +37,36 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/change/password',[AdminController::class,'changePassword'])->name('change.password');
     Route::post('/update/password',[AdminController::class,'updatePassword'])->name('update.password');
 
+    // HomeSlider
+    Route::get('/home/slider',[HomeSliderController::class,'homeSlider'])->name('home.slider');
+    Route::post('/update/slider',[HomeSliderController::class,'updateSlider'])->name('update.slider');
+
 });
+
+
+
 
 // ================= Website Routes ======================
 Route::get('/',[WebsiteController::class, 'index']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
