@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Website\WebsiteController;
 
 
 /*
@@ -19,9 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 
 
@@ -36,6 +37,9 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('/update/password',[AdminController::class,'updatePassword'])->name('update.password');
 
 });
+
+// ================= Website Routes ======================
+Route::get('/',[WebsiteController::class, 'index']);
 
 
 
