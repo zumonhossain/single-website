@@ -3,90 +3,12 @@
     Home
 @endsection
 @section('content')
-    <!-- banner-area -->
-    <section class="banner">
-        <div class="container custom-container">
-            <div class="row align-items-center justify-content-center justify-content-lg-between">
-                <div class="col-lg-6 order-0 order-lg-2">
-                    <div class="banner__img text-center text-xxl-end">
-                        <img src="{{ $homeSlider->slide_image }}" alt="">
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-6">
-                    <div class="banner__content">
-                        <h2 class="title wow fadeInUp" data-wow-delay=".2s"><span>{{ $homeSlider->title }}</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".4s">{{ $homeSlider->sub_title }}</p>
-                        <a href="#" class="btn banner__btn wow fadeInUp" data-wow-delay=".6s">more about me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll__down">
-            <a href="#aboutSection" class="scroll__link">Scroll down</a>
-        </div>
-        <div class="banner__video">
-            <a href="{{ $homeSlider->video_url  }}" class="popup-video"><i class="fas fa-play"></i></a>
-        
-    </section>
-    <!-- banner-area-end -->
+    <!-- home-slider-area -->
+        @include('website.home-all.home_slider')
+    <!-- home-slider-area-end -->
 
     <!-- about-area -->
-    <section id="aboutSection" class="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <ul class="about__icons__wrap">
-                        <li>
-                            <img class="light" src="{{ asset('contents/website') }}/assets/img/icons/xd_light.png" alt="XD">
-                            <img class="dark" src="{{ asset('contents/website') }}/assets/img/icons/xd.png" alt="XD">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('contents/website') }}/assets/img/icons/skeatch_light.png" alt="Skeatch">
-                            <img class="dark" src="{{ asset('contents/website') }}/assets/img/icons/skeatch.png" alt="Skeatch">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('contents/website') }}/assets/img/icons/illustrator_light.png" alt="Illustrator">
-                            <img class="dark" src="{{ asset('contents/website') }}/assets/img/icons/illustrator.png" alt="Illustrator">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('contents/website') }}/assets/img/icons/hotjar_light.png" alt="Hotjar">
-                            <img class="dark" src="{{ asset('contents/website') }}/assets/img/icons/hotjar.png" alt="Hotjar">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('contents/website') }}/assets/img/icons/invision_light.png" alt="Invision">
-                            <img class="dark" src="{{ asset('contents/website') }}/assets/img/icons/invision.png" alt="Invision">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('contents/website') }}/assets/img/icons/photoshop_light.png" alt="Photoshop">
-                            <img class="dark" src="{{ asset('contents/website') }}/assets/img/icons/photoshop.png" alt="Photoshop">
-                        </li>
-                        <li>
-                            <img class="light" src="{{ asset('contents/website') }}/assets/img/icons/figma_light.png" alt="Figma">
-                            <img class="dark" src="{{ asset('contents/website') }}/assets/img/icons/figma.png" alt="Figma">
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about__content">
-                        <div class="section__title">
-                            <span class="sub-title">01 - About me</span>
-                            <h2 class="title">I have transform your ideas into remarkable digital products</h2>
-                        </div>
-                        <div class="about__exp">
-                            <div class="about__exp__icon">
-                                <img src="{{ asset('contents/website') }}/assets/img/icons/about_icon.png" alt="">
-                            </div>
-                            <div class="about__exp__content">
-                                <p>20+ Years Experience In this game, Means <br> Product Designing</p>
-                            </div>
-                        </div>
-                        <p class="desc">I love to work in User Experience & User Interface designing. Because I love to solve the design problem and find easy and better solutions to solve it. I always try my best to make good user interface with the best user experience. I have been working as a UX Designer</p>
-                        <a href="about.html" class="btn">Download my resume</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        @include('website.home-all.home_about')
     <!-- about-area-end -->
 
     <!-- services-area -->
@@ -1056,36 +978,4 @@
         </div>
     </section>
     <!-- blog-area-end -->
-
-    <!-- contact-area -->
-    <section class="homeContact">
-        <div class="container">
-            <div class="homeContact__wrap">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="section__title">
-                            <span class="sub-title">07 - Say hello</span>
-                            <h2 class="title">Any questions? Feel free <br> to contact</h2>
-                        </div>
-                        <div class="homeContact__content">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                            <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="homeContact__form">
-                            <form action="#">
-                                <input type="text" placeholder="Enter name*">
-                                <input type="email" placeholder="Enter mail*">
-                                <input type="number" placeholder="Enter number*">
-                                <textarea name="message" placeholder="Enter Massage*"></textarea>
-                                <button type="submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- contact-area-end -->
 @endsection

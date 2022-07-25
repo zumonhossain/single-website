@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Website\WebsiteController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\HomeSliderController;
+use App\Http\Controllers\Admin\AboutController;
 
 
 /*
@@ -41,6 +42,13 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/home/slider',[HomeSliderController::class,'homeSlider'])->name('home.slider');
     Route::post('/update/slider',[HomeSliderController::class,'updateSlider'])->name('update.slider');
 
+
+    // About
+    Route::get('/about/page',[AboutController::class,'aboutPage'])->name('about.page');
+    Route::post('/update/about',[AboutController::class,'updateAbout'])->name('update.about');
+
+    
+
 });
 
 
@@ -48,6 +56,7 @@ Route::group(['prefix'=>'admin'], function(){
 
 // ================= Website Routes ======================
 Route::get('/',[WebsiteController::class, 'index']);
+Route::get('/about',[WebsiteController::class,'homeAbout'])->name('home.about');
 
 
 

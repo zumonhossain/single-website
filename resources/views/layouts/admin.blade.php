@@ -160,6 +160,15 @@
                                     <li><a href="{{ route('home.slider') }}">Home Slider</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-mail-send-line"></i>
+                                    <span>About Page Setup</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('about.page') }}">About Page</a></li>
+                                </ul>
+                            </li>
 
                             <li class="menu-title">Pages</li>
 
@@ -263,6 +272,11 @@
                 }
             @endif 
         </script>
+
+        <!--tinymce js-->
+        <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/libs/tinymce/tinymce.min.js"></script>
+        <!-- init js -->
+        <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/pages/form-editor.init.js"></script>
 
     </body>
 
