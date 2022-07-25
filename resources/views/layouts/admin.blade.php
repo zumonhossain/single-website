@@ -33,6 +33,7 @@
         <!-- App Css-->
         <link href="{{ asset('contents/admin') }}/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
+        <link rel="stylesheet" type="text/css" href="{{ asset('contents/admin') }}/assets/css/toastr.css" >
     </head>
 
     <body data-topbar="dark">
@@ -248,6 +249,28 @@
         <!-- App js -->
         <script src="{{ asset('contents/admin') }}/assets/js/app.js"></script>
         <script src="{{ asset('contents/admin') }}/assets/js/custome.js"></script>
+
+        <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/toastr.min.js"></script>
+        <script>
+            @if(Session::has('message'))
+                var type = "{{ Session::get('alert-type','info') }}"
+                switch(type){
+                    case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+                    case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+                    case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+                    case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break; 
+                }
+            @endif 
+        </script>
+
     </body>
 
 </html>
