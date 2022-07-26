@@ -63,8 +63,6 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/edit/portfolio/{id}',[PortfolioController::class,'editPortfolio'])->name('edit.portfolio');
     Route::post('/update/portfolio',[PortfolioController::class,'updatePortfolio'])->name('update.portfolio');
     Route::get('/delete/portfolio/{id}',[PortfolioController::class,'deletePortfolio'])->name('delete.portfolio');
-
-    Route::get('/portfolio/details/{id}',[PortfolioController::class,'portfolioDetails'])->name('portfolio.details');
     Route::get('/portfolio',[PortfolioController::class,'homePortfolio'])->name('home.portfolio');
 
     
@@ -77,6 +75,7 @@ Route::group(['prefix'=>'admin'], function(){
 // ================= Website Routes ======================
 Route::get('/',[WebsiteController::class, 'index']);
 Route::get('/about',[WebsiteController::class,'homeAbout'])->name('home.about');
+Route::get('/portfolio/details/{id}',[WebsiteController::class,'portfolioDetails'])->name('portfolio.details');
 
 
 

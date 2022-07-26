@@ -20,5 +20,11 @@ class WebsiteController extends Controller{
         $aboutpage = About::where('about_id',1)->firstOrFail();
         return view('website.about-page.about_page',compact('aboutpage'));
 
+    }
+
+    public function portfolioDetails($id){
+
+        $portfolio = Portfolio::where('portfolio_id',$id)->firstOrFail();
+        return view('website.protfolio_page.protfolio_details',compact('portfolio'));
      }
 }
