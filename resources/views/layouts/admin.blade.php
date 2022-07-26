@@ -167,6 +167,8 @@
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{ route('about.page') }}">About Page</a></li>
+                                    <li><a href="{{ route('about.multi.image') }}">About Multi Image</a></li>
+                                    <li><a href="{{ route('all.multi.image') }}">All Multi Image</a></li>
                                 </ul>
                             </li>
 
@@ -277,6 +279,8 @@
         <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/libs/tinymce/tinymce.min.js"></script>
         <!-- init js -->
         <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/pages/form-editor.init.js"></script>
+        <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/sweetalert2@10.js"></script>
+        <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/code.js"></script>
 
     </body>
 

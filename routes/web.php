@@ -46,6 +46,14 @@ Route::group(['prefix'=>'admin'], function(){
     // About
     Route::get('/about/page',[AboutController::class,'aboutPage'])->name('about.page');
     Route::post('/update/about',[AboutController::class,'updateAbout'])->name('update.about');
+    
+    // About Multi Image
+    Route::get('/about/multi/image',[AboutController::class,'aboutMultiImage'])->name('about.multi.image');
+    Route::post('/store/multi/image',[AboutController::class,'storeMultiImage'])->name('store.multi.image');
+    Route::get('/all/multi/image',[AboutController::class,'allMultiImage'])->name('all.multi.image');
+    Route::get('/edit/multi/image/{id}',[AboutController::class,'editMultiImage'])->name('edit.multi.image');
+    Route::post('/update/multi/image',[AboutController::class,'updateMultiImage'])->name('update.multi.image');
+    Route::get('/delete/multi/image/{id}',[AboutController::class,'deleteMultiImage'])->name('delete.multi.image');
 
     
 
