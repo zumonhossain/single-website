@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 
 // ================= Admin Routes ======================
-Route::group(['prefix'=>'admin'], function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
     Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::get('/logout',[AdminController::class,'logout'])->name('admin.logout');
     Route::get('/profile',[AdminController::class,'profile'])->name('admin.profile');
@@ -81,8 +81,8 @@ Route::get('/portfolio/details/{id}',[WebsiteController::class,'portfolioDetails
 // Contact
 Route::get('/contact',[ContactController::class,'contact'])->name('contact.me');
 Route::post('/store/message',[ContactController::class,'storeMessage'])->name('store.message');
-Route::get('/admin/contact/message',[ContactController::class,'contactMessage'])->name('contact.message');
-Route::get('/admin/delete/message/{id}',[ContactController::class,'deleteMessage'])->name('delete.message');
+Route::get('/admin/contact/message',[ContactController::class,'contactMessage'])->name('contact.message')->middleware('auth');
+Route::get('/admin/delete/message/{id}',[ContactController::class,'deleteMessage'])->name('delete.message')->middleware('auth');
 
 
 

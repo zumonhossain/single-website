@@ -291,6 +291,7 @@
         <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/pages/form-editor.init.js"></script>
         <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/sweetalert2@10.js"></script>
         <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/code.js"></script>
+        <script type="text/javascript" src="{{ asset('contents/admin') }}/assets/js/validate.min.js"></script>
 
     </body>
 
