@@ -5,6 +5,7 @@ use App\Http\Controllers\Website\WebsiteController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\HomeSliderController;
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\PortfolioController;
 
 
 /*
@@ -54,6 +55,17 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/edit/multi/image/{id}',[AboutController::class,'editMultiImage'])->name('edit.multi.image');
     Route::post('/update/multi/image',[AboutController::class,'updateMultiImage'])->name('update.multi.image');
     Route::get('/delete/multi/image/{id}',[AboutController::class,'deleteMultiImage'])->name('delete.multi.image');
+
+    // Portfolio
+    Route::get('/all/portfolio',[PortfolioController::class,'allPortfolio'])->name('all.portfolio');
+    Route::get('/add/portfolio',[PortfolioController::class,'addPortfolio'])->name('add.portfolio');
+    Route::post('/store/portfolio',[PortfolioController::class,'storePortfolio'])->name('store.portfolio');
+    Route::get('/edit/portfolio/{id}',[PortfolioController::class,'editPortfolio'])->name('edit.portfolio');
+    Route::post('/update/portfolio',[PortfolioController::class,'updatePortfolio'])->name('update.portfolio');
+    Route::get('/delete/portfolio/{id}',[PortfolioController::class,'deletePortfolio'])->name('delete.portfolio');
+
+    Route::get('/portfolio/details/{id}',[PortfolioController::class,'portfolioDetails'])->name('portfolio.details');
+    Route::get('/portfolio',[PortfolioController::class,'homePortfolio'])->name('home.portfolio');
 
     
 
