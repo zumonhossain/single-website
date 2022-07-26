@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Website\WebsiteController;
+use App\Http\Controllers\Website\ContactController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\HomeSliderController;
 use App\Http\Controllers\Admin\AboutController;
@@ -76,6 +77,12 @@ Route::group(['prefix'=>'admin'], function(){
 Route::get('/',[WebsiteController::class, 'index']);
 Route::get('/about',[WebsiteController::class,'homeAbout'])->name('home.about');
 Route::get('/portfolio/details/{id}',[WebsiteController::class,'portfolioDetails'])->name('portfolio.details');
+
+// Contact
+Route::get('/contact',[ContactController::class,'contact'])->name('contact.me');
+Route::post('/store/message',[ContactController::class,'storeMessage'])->name('store.message');
+Route::get('/admin/contact/message',[ContactController::class,'contactMessage'])->name('contact.message');
+Route::get('/admin/delete/message/{id}',[ContactController::class,'deleteMessage'])->name('delete.message');
 
 
 
